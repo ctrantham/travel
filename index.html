@@ -1,3 +1,1087 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dad's Orlando Birthday Escape</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bebas+Neue&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:#241C38;
+    --ink-soft:#5B5270;
+    --paper:#FBF7FF;
+    --paper-raised:#FFFFFF;
+    --line:#E4DAF5;
+    --disney:#7C4FE0;
+    --disney-deep:#5A32B8;
+    --gold:#B9820A;
+    --gold-bright:#E8A400;
+    --universal:#E14A26;
+    --universal-deep:#B93A1C;
+    --teal:#0E7C77;
+    --shadow: 0 12px 28px -16px rgba(36,28,56,.28);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#F1ECFF;
+      --ink-soft:#C3B8DE;
+      --paper:#150E23;
+      --paper-raised:#1E1530;
+      --line:#392A54;
+      --disney:#A67BFF;
+      --disney-deep:#C7A9FF;
+      --gold:#FFC94A;
+      --gold-bright:#FFC94A;
+      --universal:#FF7A54;
+      --universal-deep:#FFA184;
+      --teal:#3FD6CF;
+      --shadow: 0 12px 32px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#F1ECFF;
+    --ink-soft:#C3B8DE;
+    --paper:#150E23;
+    --paper-raised:#1E1530;
+    --line:#392A54;
+    --disney:#A67BFF;
+    --disney-deep:#C7A9FF;
+    --gold:#FFC94A;
+    --gold-bright:#FFC94A;
+    --universal:#FF7A54;
+    --universal-deep:#FFA184;
+    --teal:#3FD6CF;
+    --shadow: 0 12px 32px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Nunito Sans', system-ui, -apple-system, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{text-wrap:balance; margin:0;}
+  a{color:inherit;}
+  .note a, .wish-item p a{color:var(--gold); text-decoration:underline; font-weight:700;}
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
+  @media (max-width:600px){ .wrap{padding:0 16px;} }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:76px 0 56px;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 700px 380px at 18% -10%, color-mix(in srgb, var(--disney) 20%, transparent), transparent 65%),
+      radial-gradient(ellipse 700px 380px at 88% -5%, color-mix(in srgb, var(--universal) 20%, transparent), transparent 65%);
+  }
+  .burst{position:absolute; pointer-events:none;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px; height:1px;
+    background:var(--ink-soft);
+    opacity:.5;
+  }
+  .hero h1{
+    font-family:'Fredoka', sans-serif;
+    font-weight:700;
+    font-size:clamp(2.3rem, 5.5vw, 3.6rem);
+    line-height:1.04;
+    background:linear-gradient(100deg, var(--disney-deep) 12%, var(--gold-bright) 46%, var(--universal-deep) 82%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero .sub{
+    margin-top:18px;
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:56ch;
+  }
+  .hero .sub strong{color:var(--ink); font-weight:800;}
+  .badges{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:28px;
+  }
+  .badge{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    padding:7px 13px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+    display:flex; align-items:center; gap:7px;
+  }
+  .badge .dot{width:7px; height:7px; border-radius:50%; flex:none;}
+  .badge.dis .dot{background:var(--disney);}
+  .badge.uni .dot{background:var(--universal);}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:44px 0;}
+  .section-head{margin-bottom:28px;}
+  .section-head .kicker{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:6px;
+    display:block;
+  }
+  .section-head h2{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:1.7rem;
+  }
+  .section-head p{color:var(--ink-soft); margin-top:8px; max-width:60ch;}
+
+  /* ---------- HOME BASE CARDS ---------- */
+  .homebase{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:680px){ .homebase{grid-template-columns:1fr;} }
+  .hb-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px 24px 22px;
+    box-shadow:var(--shadow);
+    border-top:4px solid var(--accent, var(--disney));
+  }
+  .hb-card.uni{--accent:var(--universal);}
+  .hb-card .hb-eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent, var(--disney));
+    font-weight:700;
+  }
+  .hb-card h3{
+    font-family:'Fredoka', sans-serif;
+    font-size:1.3rem;
+    font-weight:600;
+    margin-top:6px;
+  }
+  .hb-card .hb-dates{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.88rem;
+    color:var(--ink-soft);
+    margin-top:4px;
+  }
+  .hb-list{list-style:none; margin:16px 0 0; padding:0; display:grid; gap:9px;}
+  .hb-list li{display:flex; justify-content:space-between; gap:14px; font-size:.92rem; border-top:1px solid var(--line); padding-top:9px;}
+  .hb-list li:first-child{border-top:none; padding-top:0;}
+  .hb-list .k{color:var(--ink-soft);}
+  .hb-list .v{text-align:right; font-weight:700;}
+
+  /* ---------- TODO CHECKLIST ---------- */
+  .todo-section{padding-top:52px; padding-bottom:8px;}
+  .todo-list{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 24px;
+    box-shadow:var(--shadow);
+    display:grid; gap:14px;
+  }
+  .todo-hint{margin:6px 2px 14px; color:var(--ink-soft); font-size:.9rem; font-style:italic;}
+  .todo-item{
+    display:flex; align-items:flex-start; gap:13px; font-size:.98rem;
+    cursor:pointer; padding:6px 8px; margin:-6px -8px; border-radius:10px;
+    transition:background .15s ease, transform .12s ease; user-select:none;
+    order:1;
+  }
+  .todo-item.done{order:2;}
+  .todo-item:hover{background:color-mix(in srgb, var(--gold) 9%, transparent);}
+  .todo-item:active{transform:scale(.99);}
+  .todo-item:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+  .todo-box{
+    width:19px; height:19px; border:2px solid var(--gold);
+    border-radius:6px; flex:none; margin-top:2px;
+  }
+  .todo-item strong{font-weight:700;}
+  .todo-item span.sub{display:block; color:var(--ink-soft); font-size:.85rem; margin-top:2px;}
+  .todo-item.done .todo-box{background:var(--teal); border-color:var(--teal); position:relative;}
+  .todo-item.done .todo-box::after{
+    content:"\2713"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    color:var(--paper-raised); font-size:.7rem; font-weight:700;
+  }
+  .todo-item.done strong{color:var(--ink-soft); text-decoration:line-through;}
+
+  /* ---------- GLANCE CALENDAR ---------- */
+  .glance-section{padding-top:52px; padding-bottom:8px;}
+  .glance{display:grid; grid-template-columns:repeat(7,1fr); gap:9px;}
+  @media (max-width:860px){ .glance{grid-template-columns:repeat(4,1fr);} }
+  @media (max-width:560px){ .glance{grid-template-columns:repeat(2,1fr);} }
+  .glance-day{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:13px;
+    padding:11px 10px 12px;
+    box-shadow:var(--shadow);
+    display:flex; flex-direction:column; gap:7px;
+  }
+  .glance-day.flag{border:1px dashed var(--gold); background:color-mix(in srgb, var(--gold) 8%, var(--paper-raised));}
+  html{ scroll-behavior:smooth; }
+  a.glance-day{ text-decoration:none; color:inherit; cursor:pointer; transition:box-shadow .12s ease, transform .12s ease; }
+  a.glance-day:hover{ box-shadow:0 10px 22px -8px rgba(36,28,56,.38); transform:translateY(-2px); }
+  a.glance-day:active{ transform:translateY(0); }
+  .day[id]{ scroll-margin-top:16px; }
+  section[id], header[id]{ scroll-margin-top:16px; }
+
+  /* ---------- SECTION / DAY JUMP NAV ---------- */
+  .navjump{
+    display:flex; flex-wrap:wrap; gap:9px; justify-content:center;
+    margin:26px 0; position:relative; z-index:1;
+  }
+  .navjump a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.7rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    text-decoration:none; color:var(--disney);
+    background:var(--paper-raised); border:1px solid var(--line);
+    border-radius:100px; padding:7px 15px;
+    transition:background .12s ease, transform .12s ease, box-shadow .12s ease;
+  }
+  .navjump a:hover{
+    background:color-mix(in srgb, var(--disney) 10%, var(--paper-raised));
+    transform:translateY(-1px); box-shadow:var(--shadow);
+  }
+  .navjump a:active{ transform:translateY(0); }
+  .navjump.in-timeline{ margin:18px 0 18px; }
+  @media print{ .navjump{ display:none; } }
+  .gd-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.62rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:700;
+  }
+  .gd-date strong{display:block; font-family:'Fredoka',sans-serif; font-size:1rem; color:var(--ink); letter-spacing:0; margin-top:1px; font-weight:600;}
+  .gd-row{display:flex; align-items:flex-start; gap:6px; font-size:.74rem; line-height:1.28;}
+  .gd-dots{display:flex; gap:2px; flex:none; margin-top:4px;}
+  .gd-dot{width:7px; height:7px; border-radius:50%; flex:none;}
+  .gd-dot.dis{background:var(--disney);}
+  .gd-dot.uni{background:var(--universal);}
+  .gd-tix{
+    margin-top:auto; padding-top:7px; border-top:1px dashed var(--line);
+    font-family:'JetBrains Mono', monospace; font-size:.63rem; color:var(--ink-soft);
+  }
+  .gd-hrs{
+    font-family:'JetBrains Mono', monospace; font-size:.66rem;
+    color:var(--ink-soft); white-space:nowrap;
+  }
+  .gd-wx{
+    font-family:'JetBrains Mono', monospace; font-size:.63rem;
+    color:var(--teal); white-space:nowrap; margin-top:-2px;
+  }
+  .gd-flag{
+    font-size:.63rem; color:var(--gold); font-weight:700;
+    display:flex; align-items:center; gap:4px; margin-top:-1px;
+  }
+  .gd-fw{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.63rem; font-weight:700; line-height:1.25;
+    color:var(--disney); display:flex; align-items:flex-start; gap:5px;
+    margin-top:6px; padding-top:6px; border-top:1px dotted var(--line);
+  }
+  .gd-fw.uni-fw{ color:var(--universal); }
+  .gd-fw .fw-ic{ flex:none; }
+  .glance-legend{
+    display:flex; flex-wrap:wrap; gap:16px;
+    margin-top:14px; font-size:.78rem; color:var(--ink-soft);
+    align-items:center;
+  }
+  .glance-legend span{display:flex; align-items:center; gap:6px;}
+  .glance-legend .gd-dot{width:8px; height:8px;}
+
+  /* ---------- CROWD GRID ---------- */
+  .crowd-grid-wrap{overflow-x:auto; padding-bottom:4px;}
+  table.crowd-grid{
+    width:100%; min-width:760px;
+    border-collapse:separate; border-spacing:5px 5px;
+  }
+  table.crowd-grid thead th{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.64rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-soft); font-weight:700;
+    text-align:center; padding-bottom:2px;
+  }
+  table.crowd-grid tbody th{
+    text-align:left;
+    font-family:'Nunito Sans', sans-serif; font-weight:700; font-size:.82rem;
+    color:var(--ink); white-space:nowrap; padding-right:12px;
+  }
+  table.crowd-grid tr.grp td{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.66rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-soft);
+    padding:14px 0 5px;
+    border-bottom:1px solid var(--line);
+  }
+  table.crowd-grid td.cell{
+    text-align:center;
+    border-radius:9px;
+    padding:7px 4px 8px;
+    font-family:'JetBrains Mono', monospace;
+    min-width:60px;
+  }
+  .cell-num{font-weight:700; font-size:.88rem; line-height:1.15;}
+  .cell-hrs{font-weight:600; font-size:.6rem; line-height:1.2; opacity:.8; margin-top:2px; white-space:nowrap;}
+  .cell.c1,.cell.c2{background:color-mix(in srgb, var(--teal) 10%, transparent); color:var(--teal);}
+  .cell.c3,.cell.c4{background:color-mix(in srgb, var(--teal) 24%, transparent); color:var(--teal);}
+  .cell.c5,.cell.c6{background:color-mix(in srgb, var(--teal) 40%, transparent); color:var(--teal);}
+  .cell.c7,.cell.c8{background:color-mix(in srgb, var(--teal) 58%, transparent); color:var(--teal);}
+  .cell.c9,.cell.c10{background:var(--teal); color:var(--paper-raised);}
+  .cell.chosen{box-shadow:0 0 0 2px var(--gold) inset;}
+  .crowd-legend{
+    display:flex; flex-wrap:wrap; align-items:center; gap:18px;
+    margin-top:16px; font-size:.78rem; color:var(--ink-soft);
+  }
+  .crowd-ramp{display:flex; align-items:center; gap:5px;}
+  .crowd-ramp .sw{width:20px; height:14px; border-radius:4px;}
+  .crowd-ramp .sw.r1{background:color-mix(in srgb, var(--teal) 10%, transparent);}
+  .crowd-ramp .sw.r2{background:color-mix(in srgb, var(--teal) 24%, transparent);}
+  .crowd-ramp .sw.r3{background:color-mix(in srgb, var(--teal) 40%, transparent);}
+  .crowd-ramp .sw.r4{background:color-mix(in srgb, var(--teal) 58%, transparent);}
+  .crowd-ramp .sw.r5{background:var(--teal);}
+  .crowd-legend .ring{width:16px; height:16px; border-radius:5px; box-shadow:0 0 0 2px var(--gold) inset; flex:none;}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;}
+  .spine{
+    position:absolute; left:26px; top:6px; bottom:6px; width:2px;
+    background:linear-gradient(var(--disney), var(--disney) 52%, var(--universal) 52%, var(--universal));
+    opacity:.35;
+  }
+  @media (max-width:680px){ .spine{left:18px;} }
+  .day{
+    position:relative;
+    padding-left:64px;
+    margin-bottom:22px;
+  }
+  @media (max-width:680px){ .day{padding-left:46px;} }
+  .day .node{
+    position:absolute; left:16px; top:6px;
+    width:22px; height:22px; border-radius:50%;
+    background:var(--paper-raised);
+    border:3px solid var(--accent, var(--disney));
+  }
+  @media (max-width:680px){ .day .node{left:8px; width:18px; height:18px;} }
+  .day.uni .node{--accent:var(--universal);}
+  .day-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px 22px;
+    box-shadow:var(--shadow);
+  }
+  .day-top{
+    display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    margin-bottom:8px;
+  }
+  .day-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent, var(--disney));
+    font-weight:700;
+  }
+  .day.uni .day-date{--accent:var(--universal);}
+  .day-title{
+    font-family:'Fredoka', sans-serif;
+    font-weight:600;
+    font-size:1.22rem;
+  }
+  .day.uni .day-title{font-family:'Bebas Neue', 'Fredoka', sans-serif; letter-spacing:.02em; font-size:1.4rem;}
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.66rem; letter-spacing:.06em; text-transform:uppercase;
+    padding:3px 9px; border-radius:100px; font-weight:700;
+    white-space:nowrap;
+  }
+  .tag.confirmed{background:color-mix(in srgb, var(--teal) 18%, transparent); color:var(--teal);}
+  .tag.suggested{background:color-mix(in srgb, var(--gold) 18%, transparent); color:var(--gold);}
+  .tag.crowd{background:color-mix(in srgb, var(--ink-soft) 18%, transparent); color:var(--ink-soft);}
+  .tag.pending{background:transparent; color:var(--gold); border:1px dashed var(--gold);}
+  .day-body p{margin:8px 0 0; color:var(--ink-soft); font-size:.95rem;}
+  .day-body .note{
+    margin-top:12px;
+    padding:10px 13px;
+    background:color-mix(in srgb, var(--gold) 10%, transparent);
+    border-left:3px solid var(--gold);
+    border-radius:0 8px 8px 0;
+    font-size:.87rem;
+    color:var(--ink);
+  }
+
+  /* portal divider */
+  .portal{
+    position:relative;
+    margin:38px 0 30px 0;
+    padding-left:64px;
+  }
+  @media (max-width:680px){ .portal{padding-left:46px;} }
+  .portal-inner{
+    display:flex; align-items:center; gap:16px;
+    background:var(--paper-raised);
+    border:1px dashed var(--line);
+    border-radius:100px;
+    padding:12px 22px;
+  }
+  .portal-inner svg{flex:none;}
+  .portal-text{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.78rem;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+  }
+  .portal-text strong{color:var(--ink); font-weight:700;}
+
+  /* ---------- HOUR BY HOUR ---------- */
+  .hr-list{display:flex; flex-direction:column;}
+  .hr-block{
+    display:grid; grid-template-columns:82px 1fr; gap:12px;
+    padding:8px 0; border-bottom:1px dashed var(--line);
+    font-size:.88rem;
+  }
+  .hr-block:last-child{border-bottom:none;}
+  .hr-time{
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:.8rem;
+    color:var(--accent, var(--disney));
+  }
+  .day.uni .hr-time{--accent:var(--universal);}
+  .hr-desc{color:var(--ink);}
+  .hr-desc .sub{display:block; color:var(--ink-soft); font-size:.82rem; margin-top:2px;}
+  .hr-block.open{
+    background:color-mix(in srgb, var(--gold) 8%, transparent);
+    border-radius:8px; padding:8px 10px; margin:2px 0;
+    border-bottom:none;
+  }
+  .hr-block.open .hr-time{color:var(--gold);}
+  .hr-open-tag{
+    font-family:'JetBrains Mono', monospace; font-size:.64rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:.05em; color:var(--gold);
+    margin-left:8px;
+  }
+  .hr-tp{
+    display:inline-block; font-family:'JetBrains Mono', monospace;
+    font-size:.86rem; font-weight:700; color:var(--teal);
+    background:color-mix(in srgb, var(--teal) 16%, transparent);
+    border-radius:100px; padding:1px 9px; margin-left:8px; white-space:nowrap; vertical-align:middle;
+  }
+
+  /* ---------- TICKET STUBS ---------- */
+  .stubs{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  @media (max-width:680px){ .stubs{grid-template-columns:1fr;} }
+  .stub{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:flex;
+  }
+  .stub .side{
+    width:10px; flex:none;
+    background:repeating-linear-gradient(180deg, var(--accent, var(--disney)) 0 8px, transparent 8px 15px);
+  }
+  .stub.uni .side{--accent:var(--universal);}
+  .stub-main{padding:18px 20px; flex:1; min-width:0;}
+  .stub-head{display:flex; justify-content:space-between; align-items:flex-start; gap:10px;}
+  .stub-name{font-family:'Fredoka', sans-serif; font-weight:600; font-size:1.02rem;}
+  .stub.uni .stub-name{font-family:'Bebas Neue','Fredoka',sans-serif; letter-spacing:.02em; font-size:1.15rem;}
+  .stub-conf{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .stub-meta{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:6px;}
+  .stub-meta li{display:flex; justify-content:space-between; font-size:.85rem; gap:10px;}
+  .stub-meta .k{color:var(--ink-soft);}
+  .stub-meta .v{font-weight:700; text-align:right;}
+  .stub-cost{
+    margin-top:12px; padding-top:10px; border-top:1px dashed var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .stub-cost .amt{font-weight:700; font-size:1.05rem;}
+
+  /* ---------- HEADS UP ---------- */
+  .headsup{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 26px 8px;
+    box-shadow:var(--shadow);
+  }
+  .hu-item{
+    display:grid; grid-template-columns:28px 1fr; gap:14px;
+    padding-bottom:20px; margin-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .hu-item:last-child{border-bottom:none; margin-bottom:0; padding-bottom:18px;}
+  .hu-num{
+    font-family:'JetBrains Mono', monospace;
+    font-weight:700; font-size:.85rem;
+    color:var(--gold);
+    padding-top:2px;
+  }
+  .hu-item h4{
+    font-family:'Fredoka', sans-serif; font-weight:600; font-size:1rem; margin:0 0 4px;
+  }
+  .hu-item p{margin:0; color:var(--ink-soft); font-size:.92rem;}
+
+  /* ---------- WISH LIST ---------- */
+  .wishlist{
+    background:var(--paper-raised);
+    border:1px dashed var(--line);
+    border-radius:18px;
+    padding:26px 26px 8px;
+  }
+  .wish-item{
+    display:grid; grid-template-columns:28px 1fr; gap:14px;
+    padding-bottom:20px; margin-bottom:20px;
+    border-bottom:1px solid var(--line);
+  }
+  .wish-item:last-child{border-bottom:none; margin-bottom:0; padding-bottom:18px;}
+  .wish-star{
+    font-size:1.1rem;
+    color:var(--gold);
+    padding-top:1px;
+  }
+  .wish-item h4{
+    font-family:'Fredoka', sans-serif; font-weight:600; font-size:1rem; margin:0 0 4px;
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  }
+  .wish-item p{margin:0; color:var(--ink-soft); font-size:.92rem;}
+  .wish-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.62rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-soft);
+    background:color-mix(in srgb, var(--ink-soft) 12%, transparent);
+    padding:2px 8px; border-radius:100px; font-weight:700;
+  }
+
+  /* ---------- FOOD & WINE CRAWL ---------- */
+  .fw-map-wrap{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px 18px 14px;
+    box-shadow:var(--shadow);
+    margin-bottom:24px;
+  }
+  .fw-map-wrap svg{display:block; width:100%; height:auto;}
+  .fw-map-caption{
+    margin-top:6px; font-size:.78rem; color:var(--ink-soft); text-align:center;
+  }
+  .fw-list{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 26px 8px;
+    box-shadow:var(--shadow);
+  }
+  .fw-item{
+    display:grid; grid-template-columns:32px 1fr; gap:14px;
+    padding-bottom:18px; margin-bottom:18px;
+    border-bottom:1px solid var(--line);
+  }
+  .fw-item:last-child{border-bottom:none; margin-bottom:0; padding-bottom:18px;}
+  .fw-num{
+    width:30px; height:30px; border-radius:50%;
+    background:var(--disney); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono', monospace; font-weight:700; font-size:.85rem;
+    flex:none;
+  }
+  .fw-item.dessert .fw-num{background:var(--gold);}
+  .fw-item h4{
+    font-family:'Fredoka', sans-serif; font-weight:600; font-size:1rem; margin:0 0 3px;
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  }
+  .fw-booth{
+    display:inline-block; font-family:'JetBrains Mono', monospace;
+    font-size:.62rem; font-weight:700; color:var(--disney);
+    border:1.5px solid var(--disney); border-radius:100px; padding:1px 7px;
+    vertical-align:middle;
+  }
+  .fw-loc{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.64rem; letter-spacing:.05em; text-transform:uppercase;
+    color:var(--ink-soft);
+    background:color-mix(in srgb, var(--ink-soft) 12%, transparent);
+    padding:2px 8px; border-radius:100px; font-weight:700;
+  }
+  .fw-item.dessert .fw-loc{
+    color:var(--gold);
+    background:color-mix(in srgb, var(--gold) 16%, transparent);
+  }
+  .fw-score{
+    font-family:'JetBrains Mono', monospace;
+    font-size:.64rem; letter-spacing:.05em;
+    color:var(--gold);
+    background:color-mix(in srgb, var(--gold) 16%, transparent);
+    padding:2px 8px; border-radius:100px; font-weight:700;
+  }
+  .fw-score.low{
+    color:var(--universal);
+    background:color-mix(in srgb, var(--universal) 16%, transparent);
+  }
+  .fw-tag{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:.72rem; letter-spacing:.02em;
+    color:var(--gold);
+    background:color-mix(in srgb, var(--gold) 18%, transparent);
+    padding:2px 8px; border-radius:100px; font-weight:700;
+    margin-right:4px;
+  }
+  .fw-item p{margin:0; color:var(--ink-soft); font-size:.92rem;}
+  .fw-item p a{color:var(--gold); text-decoration:underline; font-weight:700;}
+  .fw-photo{
+    display:block; width:100%; max-width:300px;
+    border-radius:12px; margin-bottom:10px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .day-photo-wrap{margin:14px 0;}
+  .day-photo{
+    display:block; width:100%; max-width:480px;
+    border-radius:14px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .day-photo-cap{
+    font-size:.8rem; color:var(--ink-soft); margin-top:6px;
+  }
+  .fw-extras{
+    margin-top:20px;
+    background:var(--paper-raised);
+    border:1px dashed var(--line);
+    border-radius:18px;
+    padding:20px 26px;
+  }
+  .fw-extras h3{
+    font-family:'Fredoka', sans-serif; font-weight:600; font-size:1.05rem;
+    margin:0 0 6px; color:var(--ink);
+  }
+  .fw-extras > p{margin:0 0 14px; color:var(--ink-soft); font-size:.9rem;}
+  .fw-extras ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px;}
+  .fw-extras li{color:var(--ink-soft); font-size:.9rem; padding-left:16px; position:relative;}
+  .fw-extras li::before{content:"\2022"; position:absolute; left:0; color:var(--gold); font-weight:700;}
+  .fw-extras strong{color:var(--ink);}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:36px 0 60px;}
+  .contacts{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+    margin-top:18px;
+  }
+  @media (max-width:600px){ .contacts{grid-template-columns:1fr;} }
+  .contact{
+    border:1px solid var(--line); border-radius:12px; padding:14px 16px;
+    font-size:.86rem;
+    background:var(--paper-raised);
+  }
+  .contact .who{color:var(--ink-soft); display:block; margin-bottom:2px;}
+  .contact .num{font-family:'JetBrains Mono', monospace; font-weight:700;}
+  .foot-note{margin-top:26px; color:var(--ink-soft); font-size:.82rem;}
+
+  /* ---------- FOOD CHECK-OFF ---------- */
+  .fw-eat-hint{margin:0 0 18px; color:var(--ink-soft); font-size:.9rem; font-style:italic;}
+  .fw-item[data-food]{cursor:pointer; border-radius:12px; padding:10px; margin:-10px -10px 8px; transition:background .15s ease;}
+  .fw-item[data-food]:hover{background:color-mix(in srgb, var(--teal) 7%, transparent);}
+  .fw-item[data-food]:focus-visible{outline:2px solid var(--teal); outline-offset:2px;}
+  .fw-item .fw-num{position:relative;}
+  .fw-item.eaten .fw-num{background:var(--teal); color:transparent;}
+  .fw-item.eaten .fw-num::after{content:"\2713"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:1rem;}
+  .fw-item.eaten h4{text-decoration:line-through; opacity:.65;}
+  .fw-item.eaten .fw-photo{filter:grayscale(.4); opacity:.85;}
+  .fw-eaten-tag{display:inline-block; font-family:'JetBrains Mono',monospace; font-size:.6rem; font-weight:700;
+    letter-spacing:.05em; text-transform:uppercase; color:#fff; background:var(--teal);
+    border-radius:100px; padding:1px 8px; margin-left:6px; vertical-align:middle;}
+  .fw-item:not(.eaten) .fw-eaten-tag{display:none;}
+
+  /* ---------- FLOATING JUMP NAV ---------- */
+  .jump-fab{position:fixed; right:16px; bottom:16px; z-index:60;
+    font-family:'JetBrains Mono',monospace; font-size:.8rem; font-weight:700; letter-spacing:.04em;
+    color:#fff; background:var(--disney); border:none; border-radius:100px;
+    padding:12px 18px; box-shadow:0 8px 22px -6px rgba(36,28,56,.5); cursor:pointer;}
+  .jump-fab:hover{background:var(--disney-deep);}
+  .jump-menu{position:fixed; right:16px; bottom:64px; z-index:60; width:210px; max-height:72vh; overflow:auto;
+    background:var(--paper-raised); border:1px solid var(--line); border-radius:14px;
+    box-shadow:0 14px 34px -10px rgba(36,28,56,.5); padding:7px; display:none; flex-direction:column; gap:2px;}
+  .jump-menu.open{display:flex;}
+  .jump-menu a{font-family:'Nunito Sans',sans-serif; font-size:.92rem; font-weight:600; text-decoration:none;
+    color:var(--ink); padding:9px 12px; border-radius:9px;}
+  .jump-menu a:hover{background:color-mix(in srgb, var(--disney) 10%, transparent);}
+  .jump-menu .jm-head{font-family:'JetBrains Mono',monospace; font-size:.62rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--ink-soft); font-weight:700; padding:8px 12px 4px;}
+  @media print{ .jump-fab, .jump-menu{ display:none !important; } }
+
+
+  /* ---------- LIVE LINK ---------- */
+  .live-link{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;color:#fff;background:var(--gold);border-radius:100px;padding:6px 13px;}
+  .live-link:hover{filter:brightness(1.08);}
+  .live-head{margin-top:12px;}
+  .gd-live-wrap{margin-top:2px;}
+  .gd-live{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#fff;background:var(--gold);border-radius:100px;padding:3px 9px;cursor:pointer;}
+  .hr-block.live-row{border-bottom:none;padding-top:4px;}
+  /* ---------- COLLAPSIBLE DAYS ---------- */
+  #hour-by-hour .day-top, #hour-by-hour .day-title{user-select:none;cursor:pointer;}
+  #hour-by-hour .day-title{position:relative;padding-right:28px;}
+  #hour-by-hour .day-title::after{content:"\25BE";position:absolute;right:2px;top:50%;transform:translateY(-50%);color:var(--ink-soft);font-size:.82em;transition:transform .15s ease;}
+  #hour-by-hour .day.collapsed .day-title::after{transform:translateY(-50%) rotate(-90deg);}
+  #hour-by-hour .day.collapsed .hr-list{display:none;}
+  #hour-by-hour .day.collapsed .day-card{padding-bottom:16px;}
+  .hbh-hint{color:var(--ink-soft);font-size:.9rem;font-style:italic;margin:2px 0 16px;}
+  /* ---------- COLLAPSIBLE SECTION ---------- */
+  .collapsible-sec .sec-toggle{cursor:pointer;user-select:none;}
+  .collapsible-sec .sec-h2{position:relative;display:inline-block;padding-right:30px;}
+  .collapsible-sec .sec-h2::after{content:"\25BE";position:absolute;right:2px;top:55%;transform:translateY(-50%);color:var(--ink-soft);font-size:.66em;transition:transform .15s ease;}
+  .collapsible-sec.collapsed .sec-h2::after{transform:translateY(-50%) rotate(-90deg);}
+  .collapsible-sec.collapsed .section-head p{display:none;}
+  .collapsible-sec.collapsed .timeline{display:none;}
+
+</style>
+
+<header class="hero" id="top">
+  <svg class="burst" style="left:-40px; top:20px; opacity:.5;" width="140" height="140" viewBox="0 0 140 140" fill="none">
+    <g stroke="var(--disney)" stroke-width="2" stroke-linecap="round" opacity=".6">
+      <line x1="70" y1="70" x2="70" y2="10"/><line x1="70" y1="70" x2="70" y2="130"/>
+      <line x1="70" y1="70" x2="10" y2="70"/><line x1="70" y1="70" x2="130" y2="70"/>
+      <line x1="70" y1="70" x2="27" y2="27"/><line x1="70" y1="70" x2="113" y2="113"/>
+      <line x1="70" y1="70" x2="27" y2="113"/><line x1="70" y1="70" x2="113" y2="27"/>
+    </g>
+    <circle cx="70" cy="70" r="5" fill="var(--gold-bright)"/>
+  </svg>
+  <svg class="burst" style="right:-30px; top:60px; opacity:.55;" width="110" height="110" viewBox="0 0 110 110" fill="none">
+    <circle cx="55" cy="55" r="20" fill="none" stroke="var(--universal)" stroke-width="2"/>
+    <g stroke="var(--universal)" stroke-width="2" stroke-linecap="round">
+      <line x1="55" y1="20" x2="55" y2="4"/><line x1="55" y1="90" x2="55" y2="106"/>
+      <line x1="20" y1="55" x2="4" y2="55"/><line x1="90" y1="55" x2="106" y2="55"/>
+      <line x1="30" y1="30" x2="18" y2="18"/><line x1="80" y1="80" x2="92" y2="92"/>
+      <line x1="30" y1="80" x2="18" y2="92"/><line x1="80" y1="30" x2="92" y2="18"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <span class="eyebrow">A trip for the guy who taught us to love a good line queue</span>
+    <h1>Dad's Orlando Birthday Escape</h1>
+    <p class="sub"><strong>Christa &amp; Mike Crow</strong> &middot; Sunday, September 13 &ndash; Saturday, September 19, 2026 &middot; four nights of Disney magic, then two nights of Universal thrills.</p>
+    <div class="badges">
+      <span class="badge dis"><span class="dot"></span>Bay Lake Tower &middot; Disney's Contemporary Resort</span>
+      <span class="badge uni"><span class="dot"></span>Universal Helios Grand Hotel</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="todo-section" id="todo">
+    <div class="section-head">
+      <span class="kicker">Before it's real</span>
+      <h2>Still need to do</h2>
+    </div>
+    <p class="todo-hint">Tap any item to check it off &mdash; done items drop to the bottom. Tap again to bring it back.</p>
+    <div class="todo-list" id="todo-list">
+      <div class="todo-item" data-todo="dt-call" role="button" tabindex="0" aria-pressed="false">
+        <span class="todo-box"></span>
+        <div><strong>Get a substitute for DT Call</strong></div>
+      </div>
+      <div class="todo-item" data-todo="socks-mom" role="button" tabindex="0" aria-pressed="false">
+        <span class="todo-box"></span>
+        <div><strong>Get socks for mom</strong></div>
+      </div>
+      <div class="todo-item" data-todo="groceries" role="button" tabindex="0" aria-pressed="false">
+        <span class="todo-box"></span>
+        <div><strong>Pickup groceries</strong></div>
+      </div>
+      <div class="todo-item" data-todo="margaritaville" role="button" tabindex="0" aria-pressed="false">
+        <span class="todo-box"></span>
+        <div><strong>Margaritaville</strong><span class="sub">Thursday-evening option instead of Fantasmic &mdash; Jimmy Buffett's Margaritaville at Universal CityWalk, open daily 11a&ndash;10p (walkable from Helios). No reservation needed, but decide so you know whether to leave Hollywood Studios before Fantasmic.</span></div>
+      </div>
+      <div class="todo-item done" data-todo="flights" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Book flights</strong><span class="sub" style="text-decoration:none;">Booked via Amex Travel &mdash; AA #NZHRUP, Sep 13 &amp; Sep 19</span></div>
+      </div>
+      <div class="todo-item done" data-todo="beak-barrel" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Book The Beak and Barrel</strong><span class="sub" style="text-decoration:none;">Booked &mdash; Tue 9/15, 12:20 PM lunch, confirmation #356252122317</span></div>
+      </div>
+      <div class="todo-item done" data-todo="alex-flight" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Book Alex's flight</strong><span class="sub" style="text-decoration:none;">Booked &mdash; AA #YLVTNE, arrives Tue 9/15 4:01 PM, departs Thu 9/17 4:51 PM</span></div>
+      </div>
+      <div class="todo-item done" data-todo="hs-lunch" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Book HS lunch</strong><span class="sub" style="text-decoration:none;">Booked &mdash; The Hollywood Brown Derby, Thu 9/17, 2:00 PM, confirmation #356252125114</span></div>
+      </div>
+      <div class="todo-item done" data-todo="ll-epcot" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Buy EPCOT Lightning Lane</strong><span class="sub" style="text-decoration:none;">Bought &mdash; Multi Pass for Soarin', Spaceship Earth &amp; Test Track; Single Pass for Guardians of the Galaxy: Cosmic Rewind</span></div>
+      </div>
+      <div class="todo-item done" data-todo="ll-hs" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Buy Lightning Lane</strong><span class="sub" style="text-decoration:none;">Booked &mdash; Hollywood Studios, Thursday 9/17</span></div>
+      </div>
+      <div class="todo-item done" data-todo="webinar" role="button" tabindex="0" aria-pressed="true">
+        <span class="todo-box"></span>
+        <div><strong>Reschedule webinar</strong><span class="sub" style="text-decoration:none;">Rescheduled with John</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="navjump"><a href="#top">&uarr; Back to top</a><a href="#quick-look">Quick Look</a><a href="#hour-by-hour">Hour by Hour</a></div>
+
+  <section class="glance-section" id="quick-look">
+    <div class="section-head">
+      <span class="kicker">The whole week, at a glance</span>
+      <h2>Quick-look calendar</h2>
+      <p>Purple dot = Disney, orange dot = Universal &mdash; one dot for where you're sleeping that night, one for where you're spending the day. Dashed cards are day-trip or handoff days. Park hours are listed for whichever gate that day's plan actually uses. Weather is the current forecast (high/low &amp; rain chance) as of Sep 10 &mdash; typical Central Florida September pattern of hot, humid afternoons with a real chance of storms every day, so it'll keep shifting a bit day to day; worth a recheck closer to departure.</p>
+    </div>
+    <div class="glance">
+
+      <a class="glance-day" href="#hbh-sun">
+        <div class="gd-date">SUN<strong>9/13</strong></div>
+        <div class="gd-wx">90&deg;/75&deg; &middot; 87% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Bay Lake Tower</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Fly out <span class="gd-hrs">dep. 1:37p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Land MCO <span class="gd-hrs">5:22p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Arrival &middot; Disney Springs</div>
+        <div class="gd-fw"><span class="fw-ic">&#127878;</span>MK fireworks ~10:00p <span style="font-weight:400;">(Not-So-Spooky, party night) &middot; from Bay Lake Tower</span></div>
+        <div class="gd-tix">AA #NZHRUP</div>
+      </a>
+
+      <a class="glance-day" href="#hbh-mon">
+        <div class="gd-date">MON<strong>9/14</strong></div>
+        <div class="gd-wx">89&deg;/76&deg; &middot; 64% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Bay Lake Tower</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Animal Kingdom <span class="gd-hrs">9&ndash;11:30a</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>EPCOT <span class="gd-hrs">~12:30&ndash;9p</span></div>
+        <div class="gd-live-wrap"><span class="gd-live" data-href="https://qr.disneyworld.com/vaQGU3TUL4b">&#128506;&#65039; EPCOT F&amp;W map</span></div>
+        <div class="gd-fw"><span class="fw-ic">&#127878;</span>MK fireworks ~9:30p <span style="font-weight:400;">(Happily Ever After) &middot; from Bay Lake Tower</span></div>
+        <div class="gd-tix">AP (Disney)</div>
+      </a>
+
+      <a class="glance-day" href="#hbh-tue">
+        <div class="gd-date">TUE<strong>9/15</strong></div>
+        <div class="gd-wx">90&deg;/75&deg; &middot; 77% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Bay Lake Tower</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Magic Kingdom <span class="gd-hrs">9a&ndash;6p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Beak &amp; Barrel lunch <span class="gd-hrs">12:20p</span></div>
+        <div class="gd-row" style="margin-top:5px;"><span class="gd-dots"><span class="gd-dot dis"></span></span>Alex lands MCO <span class="gd-hrs">4:01p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Level 99 <span class="gd-hrs">7p&ndash;9:30p</span></div>
+        <div class="gd-fw"><span class="fw-ic">&#127878;</span>MK fireworks ~10:00p <span style="font-weight:400;">(Not-So-Spooky, party night) &middot; from Bay Lake Tower</span></div>
+        <div class="gd-tix">Beak&amp;Barrel #356252122317 &middot; Level99 #JFWWSP &middot; Alex AA #YLVTNE</div>
+      </a>
+
+      <a class="glance-day flag" href="#hbh-wed">
+        <div class="gd-date">WED<strong>9/16</strong></div>
+        <div class="gd-wx">89&deg;/74&deg; &middot; 65% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Bay Lake Tower</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Screams Tour + IOA <span class="gd-hrs">8/9a&ndash;8p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>V&amp;A dinner (6:40p)</div>
+        <div class="gd-flag">&#9873; sleep Disney, play Universal</div>
+        <div class="gd-fw"><span class="fw-ic">&#127878;</span>MK fireworks ~9:30p <span style="font-weight:400;">(Happily Ever After) &middot; from Bay Lake Tower</span></div>
+        <div class="gd-tix">Tour + V&amp;A</div>
+      </a>
+
+      <a class="glance-day flag" href="#hbh-thu">
+        <div class="gd-date">THU<strong>9/17</strong></div>
+        <div class="gd-wx">90&deg;/75&deg; &middot; 59% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span><span class="gd-dot uni"></span></span>Checkout Bay Lake &rarr; check in Helios</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Hollywood Studios <span class="gd-hrs">9a&ndash;9p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Alex flies home <span class="gd-hrs">dep. 4:51p</span></div>
+        <div class="gd-flag">&#9873; change hotels</div>
+        <div class="gd-fw uni-fw"><span class="fw-ic">&#127878;</span>Epic Universe fireworks ~8:30p <span style="font-weight:400;">(Celestial Goodnight) &middot; visible from Helios</span></div>
+        <div class="gd-tix">AP (Disney) &middot; Alex AA #YLVTNE</div>
+      </a>
+
+      <a class="glance-day" href="#hbh-fri">
+        <div class="gd-date">FRI<strong>9/18</strong></div>
+        <div class="gd-wx">89&deg;/75&deg; &middot; 55% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Helios Grand</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Epic Universe (VIP tour, non-private) <span class="gd-hrs">9a&ndash;~3p tour</span></div>
+        <div class="gd-fw uni-fw"><span class="fw-ic">&#127878;</span>Epic Universe fireworks ~8:30p <span style="font-weight:400;">(Celestial Goodnight) &middot; visible from Helios</span></div>
+        <div class="gd-tix">VIP tour #54977895 + EU tix</div>
+      </a>
+
+      <a class="glance-day" href="#hbh-sat">
+        <div class="gd-date">SAT<strong>9/19</strong></div>
+        <div class="gd-wx">90&deg;/74&deg; &middot; 61% rain</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Helios (checkout)</div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot dis"></span></span>Fort Wilderness horseback riding <span class="gd-hrs">9:30&ndash;11a</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Fly home <span class="gd-hrs">dep. 5:55p</span></div>
+        <div class="gd-row"><span class="gd-dots"><span class="gd-dot uni"></span></span>Land DFW <span class="gd-hrs">7:59p</span></div>
+        <div class="gd-tix">AA #NZHRUP</div>
+      </a>
+
+    </div>
+    <div class="glance-legend">
+      <span><span class="gd-dot dis"></span>Disney (Bay Lake Tower / WDW parks)</span>
+      <span><span class="gd-dot uni"></span>Universal (Helios Grand / Universal parks)</span>
+      <span>&#9873; day-trip / handoff day</span>
+      <span>&#127878; nightly fireworks you can watch from your hotel</span>
+    </div>
+    <p style="margin-top:10px; font-size:.8rem; color:var(--ink-soft);">Fireworks times are approximate and shift with sunset and park hours &mdash; confirm the exact minute in My Disney Experience (Disney) or the Universal app that day. MK party nights (Sun 9/13, Tue 9/15) show <strong>Disney's Not-So-Spooky Spectacular</strong> instead of Happily Ever After; both are visible from Bay Lake Tower's upper floors, rooftop, and lakeside. Epic Universe's <strong>Universal Celestial Goodnight</strong> runs ~30 min after the park closes and can be seen from Helios (Lotus Lagoon, Court of the Sun terrace, or park-facing windows).</p>
+  </section>
+
+  <div class="navjump"><a href="#top">&uarr; Back to top</a><a href="#quick-look">Quick Look</a><a href="#hour-by-hour">Hour by Hour</a></div>
+
+  <section class="homebase-section" id="homebase">
+    <div class="section-head">
+      <span class="kicker">Home base, twice over</span>
+      <h2>Where you're sleeping</h2>
+      <p>Six nights, two very different kingdoms. Your Walt Disney World and Universal (Islands of Adventure &amp; Universal Studios) annual passes cover admission on every suggested day below; Epic Universe is the one park outside those passes, which is why the VIP-tour tickets were bought separately.</p>
+    </div>
+    <div class="day-body" style="margin-bottom:18px;">
+      <div class="note"><strong>Resolved:</strong> DVC didn't have a room available for the extra night at Bay Lake Tower, so both hotel reservations stay exactly as originally booked. Instead, the Thursday/Friday activities got swapped &mdash; Hollywood Studios moved to Thursday 9/17 (the day you're already checking out of Bay Lake and into Helios anyway) and the Epic Universe VIP tour moved to Friday 9/18 (once you're settled in at Helios). Same net effect, no hotel changes needed.</div>
+    </div>
+    <div class="homebase">
+      <div class="hb-card dis">
+        <span class="hb-eyebrow">Disney Vacation Club</span>
+        <h3>Bay Lake Tower</h3>
+        <div class="hb-dates">Sun Sep 13 &rarr; Thu Sep 17 &middot; 4 nights</div>
+        <ul class="hb-list">
+          <li><span class="k">Confirmation</span><span class="v">611078723445</span></li>
+          <li><span class="k">Room</span><span class="v">1BR Villa, Preferred View</span></li>
+          <li><span class="k">Guests</span><span class="v">Christa, Mike &amp; Alex Crow</span></li>
+          <li><span class="k">Check-in / out</span><span class="v">4:00 PM / 11:00 AM</span></li>
+        </ul>
+      </div>
+      <div class="hb-card uni">
+        <span class="hb-eyebrow">Loews Hotel</span>
+        <h3>Universal Helios Grand</h3>
+        <div class="hb-dates">Thu Sep 17 &rarr; Sat Sep 19 &middot; 2 nights</div>
+        <ul class="hb-list">
+          <li><span class="k">Confirmation</span><span class="v">LAL7AKE8SK</span></li>
+          <li><span class="k">Room</span><span class="v">Park View Club, 2 Queens</span></li>
+          <li><span class="k">Guests</span><span class="v">Christa &amp; Mike Crow</span></li>
+          <li><span class="k">Balance due at hotel</span><span class="v">$1,228.50</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="navjump"><a href="#top">&uarr; Back to top</a><a href="#quick-look">Quick Look</a><a href="#hour-by-hour">Hour by Hour</a></div>
+
+  <section class="crowd-section" id="crowds">
+    <div class="section-head">
+      <span class="kicker">Every park, every day</span>
+      <h2>Crowd calendar at a glance</h2>
+      <p>Predicted crowd level, 1 (lightest) to 10 (busiest), plus that day's operating hours, for all seven gates across your whole week &mdash; the numbers behind the day-by-day picks below. Gold-ringed cells are the park you're actually booked or planning to visit that day; hover any cell for event notes (Food &amp; Wine, Horror Nights, extended hours, etc.).</p>
+    </div>
+    <div class="crowd-grid-wrap">
+      <table class="crowd-grid">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Sun<br>9/13</th>
+            <th>Mon<br>9/14</th>
+            <th>Tue<br>9/15</th>
+            <th>Wed<br>9/16</th>
+            <th>Thu<br>9/17</th>
+            <th>Fri<br>9/18</th>
+            <th>Sat<br>9/19</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="grp"><td colspan="8">Walt Disney World</td></tr>
+          <tr>
+            <th>Magic Kingdom</th>
+            <td class="cell c1" title="Halloween Party tonight, closes to day guests ~6p &middot; early entry 7:30a"><div class="cell-num">1</div><div class="cell-hrs">7:30/8a&ndash;6p</div></td>
+            <td class="cell c3" title="early entry 8:30a"><div class="cell-num">3</div><div class="cell-hrs">8:30/9a&ndash;11p</div></td>
+            <td class="cell c1 chosen" title="Halloween Party tonight, closes to day guests ~6p &middot; early entry 8:30a"><div class="cell-num">1</div><div class="cell-hrs">8:30/9a&ndash;6p</div></td>
+            <td class="cell c2" title="early entry 8:30a"><div class="cell-num">2</div><div class="cell-hrs">8:30/9a&ndash;10p</div></td>
+            <td class="cell c4" title="early entry 8:30a"><div class="cell-num">4</div><div class="cell-hrs">8:30/9a&ndash;11p</div></td>
+            <td class="cell c1" title="Halloween Party tonight, closes to day guests ~6p"><div class="cell-num">1</div><div class="cell-hrs">8a&ndash;6p</div></td>
+            <td class="cell c5" title="busiest WDW day of the week"><div class="cell-num">5</div><div class="cell-hrs">8a&ndash;11p</div></td>
+          </tr>
+          <tr>
+            <th>EPCOT</th>
+            <td class="cell c5" title="Food &amp; Wine Festival &middot; early entry 8:30a"><div class="cell-num">5</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c2 chosen" title="Food &amp; Wine + Extended Evening Hours tonight &middot; early entry 8:30a"><div class="cell-num">2</div><div class="cell-hrs">8:30/9a&ndash;9p/11p</div></td>
+            <td class="cell c2" title="Food &amp; Wine Festival &middot; early entry 8:30a"><div class="cell-num">2</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c2" title="Food &amp; Wine Festival &middot; early entry 8:30a"><div class="cell-num">2</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c4" title="Food &amp; Wine Festival &middot; early entry 8:30a"><div class="cell-num">4</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c4" title="Food &amp; Wine Festival"><div class="cell-num">4</div><div class="cell-hrs">9a&ndash;9p</div></td>
+            <td class="cell c6" title="Food &amp; Wine Festival"><div class="cell-num">6</div><div class="cell-hrs">9a&ndash;9p</div></td>
+          </tr>
+          <tr>
+            <th>Hollywood Studios</th>
+            <td class="cell c3" title="early entry 8:30a"><div class="cell-num">3</div><div class="cell-hrs">8:30/9a&ndash;9:30p</div></td>
+            <td class="cell c3" title="early entry 8:30a"><div class="cell-num">3</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c3" title="early entry 8:30a"><div class="cell-num">3</div><div class="cell-hrs">8:30/9a&ndash;9:30p</div></td>
+            <td class="cell c4" title="Extended Evening Hours tonight &middot; early entry 8:30a"><div class="cell-num">4</div><div class="cell-hrs">8:30/9a&ndash;9p/11p</div></td>
+            <td class="cell c3 chosen" title="early entry 8:30a"><div class="cell-num">3</div><div class="cell-hrs">8:30/9a&ndash;9p</div></td>
+            <td class="cell c4"><div class="cell-num">4</div><div class="cell-hrs">8:30a&ndash;9p</div></td>
+            <td class="cell c6"><div class="cell-num">6</div><div class="cell-hrs">8:30a&ndash;9p</div></td>
+          </tr>
+          <tr>
+            <th>Animal Kingdom</th>
+            <td class="cell c3" title="early entry 7:30a"><div class="cell-num">3</div><div class="cell-hrs">7:30/8a&ndash;7p</div></td>
+            <td class="cell c3 chosen" title="early entry 7:30a"><div class="cell-num">3</div><div class="cell-hrs">7:30/8a&ndash;7p</div></td>
+            <td class="cell c3" title="early entry 7:30a"><div class="cell-num">3</div><div class="cell-hrs">7:30/8a&ndash;6p</div></td>
+            <td class="cell c1" title="lightest gate of the week &middot; early entry 7:30a"><div class="cell-num">1</div><div class="cell-hrs">7:30/8a&ndash;6p</div></td>
+            <td class="cell c2" title="early entry 7:30a"><div class="cell-num">2</div><div class="cell-hrs">7:30/8a&ndash;6p</div></td>
+            <td class="cell c4"><div class="cell-num">4</div><div class="cell-hrs">8a&ndash;7p</div></td>
+            <td class="cell c7"><div class="cell-num">7</div><div class="cell-hrs">8a&ndash;8p</div></td>
+          </tr>
+          <tr class="grp"><td colspan="8">Universal Orlando</td></tr>
+          <tr>
+            <th>Universal Studios FL</th>
+            <td class="cell c2" title="Horror Nights tonight, park closes early"><div class="cell-num">2</div><div class="cell-hrs">9a&ndash;5p</div></td>
+            <td class="cell c3"><div class="cell-num">3</div><div class="cell-hrs">10a&ndash;7p</div></td>
+            <td class="cell c2"><div class="cell-num">2</div><div class="cell-hrs">10a&ndash;7p</div></td>
+            <td class="cell c3" title="Horror Nights tonight, park closes early"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;5p</div></td>
+            <td class="cell c3" title="Horror Nights tonight, park closes early"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;5p</div></td>
+            <td class="cell c2" title="Horror Nights tonight, park closes early"><div class="cell-num">2</div><div class="cell-hrs">9a&ndash;5p</div></td>
+            <td class="cell c3" title="Horror Nights tonight, park closes early"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;5p</div></td>
+          </tr>
+          <tr>
+            <th>Islands of Adventure</th>
+            <td class="cell c3"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;8p</div></td>
+            <td class="cell c3"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;8p</div></td>
+            <td class="cell c3"><div class="cell-num">3</div><div class="cell-hrs">9a&ndash;8p</div></td>
+            <td class="cell c2 chosen" title="tied for lowest IOA crowd of the week"><div class="cell-num">2</div><div class="cell-hrs">9a&ndash;8p</div></td>
+            <td class="cell c2" title="tied for lowest IOA crowd of the week &middot; early entry 8a"><div class="cell-num">2</div><div class="cell-hrs">8/9a&ndash;8p</div></td>
+            <td class="cell c3" title="early entry 8a"><div class="cell-num">3</div><div class="cell-hrs">8/9a&ndash;8p</div></td>
+            <td class="cell c3" title="early entry 8a"><div class="cell-num">3</div><div class="cell-hrs">8/9a&ndash;8p</div></td>
+          </tr>
+          <tr>
+            <th>Epic Universe</th>
+            <td class="cell c5"><div class="cell-num">5</div><div class="cell-hrs">10a&ndash;8p</div></td>
+            <td class="cell c6"><div class="cell-num">6</div><div class="cell-hrs">10a&ndash;8p</div></td>
+            <td class="cell c6"><div class="cell-num">6</div><div class="cell-hrs">10a&ndash;8p</div></td>
+            <td class="cell c6"><div class="cell-num">6</div><div class="cell-hrs">10a&ndash;8p</div></td>
+            <td class="cell c6" title="early entry 9a"><div class="cell-num">6</div><div class="cell-hrs">9/10a&ndash;8p</div></td>
+            <td class="cell c5 chosen" title="VIP tour hedges against the consistently high crowds &mdash; and Friday's the lightest Epic Universe day this week &middot; early entry 9a"><div class="cell-num">5</div><div class="cell-hrs">9/10a&ndash;8p</div></td>
+            <td class="cell c6" title="early entry 9a"><div class="cell-num">6</div><div class="cell-hrs">9/10a&ndash;8p</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="crowd-legend">
+      <div class="crowd-ramp"><span class="sw r1"></span><span class="sw r2"></span><span class="sw r3"></span><span class="sw r4"></span><span class="sw r5"></span><span>1 (lightest) &rarr; 10 (busiest)</span></div>
+      <span><span class="ring" style="display:inline-block; vertical-align:-3px; margin-right:6px;"></span>the park you're actually there</span>
+    </div>
+    <p style="margin-top:10px; font-size:.85rem; color:var(--ink-soft);">A slash on an hour is early/extended access for on-site resort guests &mdash; <strong>7:30/8a</strong> means Early Theme Park Entry gets you in at 7:30 while the public waits till 8; <strong>9p/11p</strong> means Extended Evening Hours keep the park open past the public's 9 PM close. These only show on the days you're actually eligible: <strong>WDW gates, Sun 9/13&ndash;Thu 9/17</strong> (Bay Lake Tower) and <strong>Universal gates, Thu 9/17&ndash;Sat 9/19</strong> (Helios Grand) &mdash; which is why Fri 9/18&ndash;Sat 9/19 show plain hours for Disney and Sun 9/13&ndash;Wed 9/16 show plain hours for Universal.</p>
+  </section>
+
+  <div class="navjump"><a href="#top">&uarr; Back to top</a><a href="#quick-look">Quick Look</a><a href="#hour-by-hour">Hour by Hour</a></div>
+
   <section class="timeline-section collapsible-sec collapsed" id="plan">
     <div class="section-head sec-toggle">
       <span class="kicker">Planning info &middot; tap to open</span>
